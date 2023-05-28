@@ -3,6 +3,10 @@
 
 
 ## How to use - 
- - pull this repo
+ - clone this repo
  - run `yarn`
  - then run `yarn dev`
+ 
+
+
+**Thanks for inviting me to the interview 😁**
