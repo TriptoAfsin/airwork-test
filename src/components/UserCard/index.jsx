@@ -16,13 +16,17 @@ import {
   AlertDialogHeader,
   AlertDialogContent,
   AlertDialogOverlay,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 import UserModal from "../UserModal";
 
 function UserCard({ user }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isOpen: isDialogOpen, onOpen: onDialogOpen, onClose: onDialogClose } = useDisclosure()
-  const cancelRef = React.useRef()
+  const {
+    isOpen: isDialogOpen,
+    onOpen: onDialogOpen,
+    onClose: onDialogClose,
+  } = useDisclosure();
+  const cancelRef = React.useRef();
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -42,19 +46,19 @@ function UserCard({ user }) {
       >
         <AlertDialogOverlay>
           <AlertDialogContent>
-            <AlertDialogHeader fontSize='lg' fontWeight='bold'>
+            <AlertDialogHeader fontSize="lg" fontWeight="bold">
               Delete Customer
             </AlertDialogHeader>
 
             <AlertDialogBody>
-              Are you sure? You can't undo this action afterwards.
+              Are you sure? You can not undo this action afterwards.
             </AlertDialogBody>
 
             <AlertDialogFooter>
               <Button ref={cancelRef} onClick={onDialogClose}>
                 Cancel
               </Button>
-              <Button colorScheme='red' onClick={onDialogClose} ml={3}>
+              <Button colorScheme="red" onClick={onDialogClose} ml={3}>
                 Delete
               </Button>
             </AlertDialogFooter>
@@ -77,11 +81,17 @@ function UserCard({ user }) {
         mt={3}
         cursor={"pointer"}
         _hover={{
-          background: '#c1e6f5',
-          transitionDuration: 500
+          background: "#c1e6f5",
+          transitionDuration: 500,
         }}
       >
-        <Box display={"flex"} flexDir={"column"} alignItems={"start"} ml={5} mr={2}>
+        <Box
+          display={"flex"}
+          flexDir={"column"}
+          alignItems={"start"}
+          ml={5}
+          mr={2}
+        >
           <Text fontWeight={"semdibold"} fontSize={20}>
             {user?.username}
           </Text>
@@ -89,7 +99,7 @@ function UserCard({ user }) {
             onClick={onOpen}
             bg={"#1b6be3"}
             _hover={{
-              background: "#1b6be3"
+              background: "#1b6be3",
             }}
             color={"white"}
             width={"100px"}
@@ -105,12 +115,12 @@ function UserCard({ user }) {
           ml={"auto"}
           mr={5}
         >
-          <Text fontSize={[15,15,16,16]}>{user?.email}</Text>
+          <Text fontSize={[15, 15, 16, 16]}>{user?.email}</Text>
           <Button
             onClick={onDialogOpen}
             bg={"#e31b4a"}
             _hover={{
-              background: "#e31b4a"
+              background: "#e31b4a",
             }}
             color={"white"}
             width={"100px"}
